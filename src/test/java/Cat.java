@@ -1,5 +1,5 @@
 public class Cat {
-    String name;
+    String name = "Vasya";
     String voice;
 
     public static void main(String[] args) {
