@@ -11,6 +11,5 @@ public class EntryPoint {
         mraufsCat.voice = "Meyau!";
         System.out.println("Cats' name is:" +mraufsCat.name);
         System.out.println("Cats' voice is:" +mraufsCat.voice);
-
     }
 }
