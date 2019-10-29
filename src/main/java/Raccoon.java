@@ -1,6 +1,31 @@
 public class Raccoon {
-    String name;
-    int age;
+    Raccoon(String nameFromConstructor) {
+        this.name = nameFromConstructor;
+    }
+
+    Raccoon(int age) {
+        System.out.println("The age is to be set to" + age);
+        this.age = age;
+        System.out.println("The age is set to" + age);
+    }
+
+    Raccoon(String raccoonName, int raccoonAge, double raccoonWeight) {
+        this.name = raccoonName;
+        if (raccoonAge < 0) {
+            throw new IllegalStateException("wrong age");
+        } else {
+            this.age = raccoonAge;
+        }
+        this.weight = raccoonWeight;
+    }
+
+    Raccoon() {
+    }
+
+    private String name;
+    private int age;
+    private double weight;
+    public String heirColor;
 
     public String getName() {
         return name;
@@ -26,5 +51,4 @@ public class Raccoon {
         this.weight = weight;
     }
 
-    double weight;
 }
