@@ -1,4 +1,4 @@
-public class Math {
+public class Maths {
     public int sum(int a, int b) {
         int result = a + b;
         return result;
@@ -9,7 +9,7 @@ public class Math {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Math().sum(1, 5));
-        System.out.println(new Math().sum(1, 5, 11));
+        System.out.println(new Maths().sum(1, 5));
+        System.out.println(new Maths().sum(1, 5, 11));
     }
 }
