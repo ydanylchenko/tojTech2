@@ -1,3 +1,4 @@
+import java.lang.Math;
 public class User {
     private String firstName;
     private String lastName;
