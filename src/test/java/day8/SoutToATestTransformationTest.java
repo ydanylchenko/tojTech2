@@ -1,4 +1,4 @@
-package com.example;
+package day8;
 
 import org.junit.Test;
 
@@ -14,9 +14,9 @@ public class SoutToATestTransformationTest {
 //        3. the result of point 2 is printed to terminal with call of System.out.println
 
 //        This one line can be split into 3 lines in order to show each step of the text transformation
-        String text = "50 results"; // Point 1
-        String updatedText = text.substring(0, 2); // Point 2
-        System.out.println(updatedText); // Point 3
+        String text = "50 results";                 // Point 1
+        String updatedText = text.substring(0, 2);  // Point 2
+        System.out.println(updatedText);            // Point 3
 
 //        We need to verify the result of execution of substring method, i.e. we
 //        need to replace point 3 with verification method call instead of printing to terminal output

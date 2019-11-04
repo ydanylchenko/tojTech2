@@ -1,15 +1,15 @@
 public class Raccoon {
-    Raccoon(String nameFromConstructor) {
+    public Raccoon(String nameFromConstructor) {
         this.name = nameFromConstructor;
     }
 
-    Raccoon(int age) {
+    public Raccoon(int age) {
         System.out.println("The age is to be set to" + age);
         this.age = age;
         System.out.println("The age is set to" + age);
     }
 
-    Raccoon(String raccoonName, int raccoonAge, double raccoonWeight) {
+    public Raccoon(String raccoonName, int raccoonAge, double raccoonWeight) {
         this.name = raccoonName;
         if (raccoonAge < 0) {
             throw new IllegalStateException("wrong age");
@@ -19,7 +19,7 @@ public class Raccoon {
         this.weight = raccoonWeight;
     }
 
-    Raccoon() {
+    public Raccoon() {
     }
 
     private String name;
