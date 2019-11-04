@@ -1,4 +1,4 @@
-package day8.tests.naming;
+package day8.tests.classes.naming;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package day8.tests.naming;
+package day8.tests.classes.naming;
 
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ import org.junit.Test;
 //        "**/*TestCase.java" - end with "TestCase".
 public class ClassNameEndsWithTest {
     @Test
-    public void thisIsTestInClassThatStartsWithTestWord(){
+    public void thisIsTestInClassThatStartsWithTestWord() {
         System.out.println("\"**/*Test.java\" - end with \"Test\".");
     }
 }
