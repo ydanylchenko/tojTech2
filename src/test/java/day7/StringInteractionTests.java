@@ -1,4 +1,4 @@
-package com.example;
+package day7;
 
 import org.junit.Test;
 
