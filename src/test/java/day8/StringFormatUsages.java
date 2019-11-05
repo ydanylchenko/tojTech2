@@ -57,6 +57,11 @@ public class StringFormatUsages {
         System.out.println(String.format("Print me '%.9f' value", 0.12000));
         System.out.println(String.format("Print me '%.9f' value", 0.12300));
         System.out.println(String.format("Print me '%.9f' value", 0.12345));
+        System.out.println("With length and precision formatting");
+        System.out.println(String.format("Print me '%5.6f' value", 123456789.123456789));
+        System.out.println(String.format("Print me '%5.9f' value", 0.12000));
+        System.out.println(String.format("Print me '%5.9f' value", 0.12300));
+        System.out.println(String.format("Print me '%5.9f' value", 0.12345));
 //        It can also do rounding of float for you
         System.out.println(String.format("Rounding of '%f' with one decimal point gives '%.1f' value", 0.13, 0.13));
         System.out.println(String.format("Rounding of '%f' with one decimal point gives '%.1f' value", 0.14, 0.14));
