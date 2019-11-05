@@ -1,5 +1,7 @@
 package day8;
 
+import org.junit.Assert;
+
 public class StringFormatUsages {
     public static void main(String[] args) {
 //        Use %s placeholder for any primitive
@@ -7,7 +9,10 @@ public class StringFormatUsages {
         System.out.println(String.format("Print me '%s' value", 15));   // Put digit in the middle of text
         System.out.println(String.format("Print me '%s' value", 12.34));    // Put digit with floating point in the middle of text
         System.out.println(String.format("Print me '%s' value", true)); // Put boolean in the middle of text
-        System.out.println(String.format("Print me '%s' value", 'K'));  // Put character in the middle of text
+        System.out.println(String.format("Print me |%s| value", 'K'));  // Put character in the middle of text
+        String result = String.format("Print me |%s| value", 'K');
+        System.out.println(result);
+        Assert.assertEquals("Print me |K| value", result);  // Put character in the middle of text
 
 //        Use %f placeholder only for digits with floating point. It will produce Runtime error on try to use it with not float digit
         System.out.println(String.format("Print me '%f' float value", 12.34));   // Put digit with floating point in the middle of text
