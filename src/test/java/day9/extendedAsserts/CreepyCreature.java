@@ -1,4 +1,4 @@
-package day8.extendedAsserts;
+package day9.extendedAsserts;
 
 public class CreepyCreature {
     public int ageAsInt;
