@@ -1,4 +1,4 @@
-package day9.conditionalStatements;
+package day9;
 
 public class JobMarket {
 

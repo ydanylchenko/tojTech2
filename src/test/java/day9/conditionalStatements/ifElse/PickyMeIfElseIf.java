@@ -1,7 +1,7 @@
 package day9.conditionalStatements.ifElse;
 
-import day9.conditionalStatements.JobMarket;
-import day9.conditionalStatements.JobOffer;
+import day9.JobMarket;
+import day9.JobOffer;
 
 public class PickyMeIfElseIf {
     public static void main(String[] args) {
