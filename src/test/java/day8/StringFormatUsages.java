@@ -1,5 +1,7 @@
 package day8;
 
+import org.junit.Assert;
+
 public class StringFormatUsages {
     public static void main(String[] args) {
 //        Use %s placeholder for any primitive
@@ -7,7 +9,10 @@ public class StringFormatUsages {
         System.out.println(String.format("Print me '%s' value", 15));   // Put digit in the middle of text
         System.out.println(String.format("Print me '%s' value", 12.34));    // Put digit with floating point in the middle of text
         System.out.println(String.format("Print me '%s' value", true)); // Put boolean in the middle of text
-        System.out.println(String.format("Print me '%s' value", 'K'));  // Put character in the middle of text
+        System.out.println(String.format("Print me |%s| value", 'K'));  // Put character in the middle of text
+        String result = String.format("Print me |%s| value", 'K');
+        System.out.println(result);
+        Assert.assertEquals("Print me |K| value", result);  // Put character in the middle of text
 
 //        Use %f placeholder only for digits with floating point. It will produce Runtime error on try to use it with not float digit
         System.out.println(String.format("Print me '%f' float value", 12.34));   // Put digit with floating point in the middle of text
@@ -52,6 +57,11 @@ public class StringFormatUsages {
         System.out.println(String.format("Print me '%.9f' value", 0.12000));
         System.out.println(String.format("Print me '%.9f' value", 0.12300));
         System.out.println(String.format("Print me '%.9f' value", 0.12345));
+        System.out.println("With length and precision formatting");
+        System.out.println(String.format("Print me '%5.6f' value", 123456789.123456789));
+        System.out.println(String.format("Print me '%5.9f' value", 0.12000));
+        System.out.println(String.format("Print me '%5.9f' value", 0.12300));
+        System.out.println(String.format("Print me '%5.9f' value", 0.12345));
 //        It can also do rounding of float for you
         System.out.println(String.format("Rounding of '%f' with one decimal point gives '%.1f' value", 0.13, 0.13));
         System.out.println(String.format("Rounding of '%f' with one decimal point gives '%.1f' value", 0.14, 0.14));

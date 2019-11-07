@@ -1,4 +1,4 @@
-package day8.returnTypes;
+package day9.returnTypes;
 
 public class Patient {
     private int ageAsInt;
