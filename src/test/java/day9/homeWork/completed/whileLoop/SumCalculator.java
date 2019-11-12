@@ -20,47 +20,15 @@ public class SumCalculator {
             System.out.println("sum on start of current iteration is: " + sum);
             System.out.println("current value of currentIterationDigitValue is: " + currentIterationDigitValue);
             sum = sum + currentIterationDigitValue;
+//            sum += currentIterationDigitValue;
             System.out.println("sum at the end of current iteration is: " + sum);
 //            we do also need to increase out counter because while (and doWhile) loops do not provide it as FOR loop
             currentIterationDigitValue = currentIterationDigitValue + 1;
+//            currentIterationDigitValue += 1;
+//            currentIterationDigitValue++;
         }
         System.out.println("sum after the loop is: " + sum);
 //        we are returning the value stored in sum variable as the result of method execution
         return sum;
-    }
-
-    @Test
-    public void testSumOfNegatives() {
-        assertEquals(0, new SumCalculator().calculateSum(-5));
-    }
-
-    @Test
-    public void testSumOfZero() {
-        assertEquals(0, new SumCalculator().calculateSum(0));
-    }
-
-    @Test
-    public void testSumOfOne() {
-        assertEquals(1, new SumCalculator().calculateSum(1));
-    }
-
-    @Test
-    public void testSumOfTwo() {
-        assertEquals(3, new SumCalculator().calculateSum(2));
-    }
-
-    @Test
-    public void testSumOfThree() {
-        assertEquals(6, new SumCalculator().calculateSum(3));
-    }
-
-    @Test
-    public void testSumOfFour() {
-        assertEquals(10, new SumCalculator().calculateSum(4));
-    }
-
-    @Test
-    public void testSumOfOneTwenty() {
-        assertEquals(120, new SumCalculator().calculateSum(15));
     }
 }
