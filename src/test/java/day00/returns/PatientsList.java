@@ -1,4 +1,4 @@
-package day10.returns;
+package day00.returns;
 
 import java.util.ArrayList;
 import java.util.List;
