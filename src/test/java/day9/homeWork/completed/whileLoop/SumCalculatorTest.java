@@ -41,5 +41,15 @@ public class SumCalculatorTest {
     @Test
     public void testSumOfOneTwenty() {
         assertEquals(120, new SumCalculator().calculateSum(15));
+
+        SumCalculator calculator;
+        calculator = new SumCalculator();
+        int expectedResult;
+        expectedResult = 120;
+        int testValue;
+        testValue = 15;
+        int actualResult;
+        actualResult = calculator.calculateSum(testValue);
+        assertEquals(expectedResult, actualResult);
     }
 }

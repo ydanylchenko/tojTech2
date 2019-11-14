@@ -1,4 +1,4 @@
-package day10.returns;
+package day00.returns;
 
 public class Patient {
     private int ageAsInt;
