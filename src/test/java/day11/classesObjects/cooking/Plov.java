@@ -5,10 +5,16 @@ import day11.classesObjects.cooking.ingridients.Rice;
 import day11.classesObjects.cooking.ingridients.Vegetables;
 
 public class Plov {
-    Plov(Meat meatIngredient, Rice riceIngredient, Vegetables vegetablesIngredient) {
+    public boolean isFresh;
+    public double weight;
+    public int amountOfPortions;
+
+    Plov(Rice riceIngredient, Vegetables vegetablesIngredient, Meat meatIngredient) {
         washRice(riceIngredient);
         cookMeat(meatIngredient);
         cutVegetables(vegetablesIngredient);
+        mixItUp(meatIngredient, riceIngredient, vegetablesIngredient);
+        isFresh = true;
     }
 
     private void mixItUp(Meat meatIngredient, Rice riceIngredient, Vegetables vegetablesIngredient) {
