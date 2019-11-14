@@ -7,10 +7,7 @@ import day11.classesObjects.cooking.ingridients.Vegetables;
 public class SatorPlov {
     public static void main(String[] args) {
 //        8AM
-        Meat freshMeat = new Meat();
-        Vegetables freshVegetables = new Vegetables();
-        Rice brandNewRice = new Rice();
-        Plov kazanWithPlov = new Plov(brandNewRice, freshVegetables, freshMeat);
+        Plov kazanWithPlov = new Plov(new Rice(), new Vegetables(), new Meat());
         System.out.println("is my plov fresh? " + kazanWithPlov.isFresh);
 
 //        4PM
