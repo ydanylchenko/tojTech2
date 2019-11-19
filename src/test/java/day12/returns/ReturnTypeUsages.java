@@ -1,4 +1,4 @@
-package day00.returns;
+package day12.returns;
 
 public class ReturnTypeUsages {
     public static void main(String[] args) {

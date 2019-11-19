@@ -8,6 +8,10 @@ public class Car {
     public int mileage;
     public String color;
     public double price;
+    int amountOfWheels;
+    int amountOfSpareWheels;
+    int totalAmountOfWheels;
+
 
     private int currentSpeed;
     private int currentSteeringWheelPosition;
