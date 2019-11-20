@@ -16,7 +16,6 @@ public class PalindromeTest {
     public static boolean isPalindrome(String word) {
         boolean isPalindrome = false;
 //        Implementation goes here. If you want to use StringBuilder please add the second implementation of this method with loops!
-        isPalindrome = new StringBuilder(word.replaceAll("\\W+", "").toLowerCase()).reverse().toString().equals(word.replaceAll("\\W+", "").toLowerCase());
         return isPalindrome;
     }
 
