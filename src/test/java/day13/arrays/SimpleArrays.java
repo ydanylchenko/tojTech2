@@ -39,7 +39,7 @@ public class SimpleArrays {
 
         Dog[] myDogs = new Dog[]{poodle, jerkyTearier};
 
-        Dog[] myOtherDogs = new Dog[2];
+        Dog[] myOtherDogs = new Dog[4];
         System.out.println("Cell with index 0 has: " + myOtherDogs[0]);
         System.out.println("Cell with index 1 has: " + myOtherDogs[1]);
         myOtherDogs[0] = poodle;
@@ -47,7 +47,8 @@ public class SimpleArrays {
         System.out.println("Cell with index 0 has: " + myOtherDogs[0]);
         System.out.println("Cell with index 1 has: " + myOtherDogs[1]);
         System.out.println("by default" + myOtherDogs);
-        System.out.println(Arrays.toString(myDogs));
+        System.out.println(Arrays.toString(myOtherDogs));
         System.out.println(poodle);
+        System.out.println(myOtherDogs[3]);
     }
 }
