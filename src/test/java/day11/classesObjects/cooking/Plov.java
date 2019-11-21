@@ -22,7 +22,7 @@ public class Plov {
     // Constructor of the class. Name must match name of the class
 //    Rice riceIngredient, Vegetables vegetablesIngredient, Meat meatIngredient are arguments of constructor
     Plov(Rice riceIngredient, Vegetables vegetablesIngredient, Meat meatIngredient) {
-        washRice(riceIngredient);
+        riceIngredient = washRice(riceIngredient);
         cookMeat(meatIngredient);
         cutVegetables(vegetablesIngredient);
         mixItUp(meatIngredient, riceIngredient, vegetablesIngredient);
@@ -62,10 +62,11 @@ public class Plov {
     }
 
     //    private method for use in constructor
-    private void washRice(Rice riceIngredient) {
+    private Rice washRice(Rice riceIngredient) {
         System.out.println("Rice is being washed: " + riceIngredient);
         System.out.println("Is rice washed?: " + riceIngredient.isWashed);
         riceIngredient.isWashed = true;
         System.out.println("Is rice washed now?: " + riceIngredient.isWashed);
+        return riceIngredient;
     }
 }
