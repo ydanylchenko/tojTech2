@@ -15,6 +15,9 @@ public class CountCharactersTest {
         int amountOfCharactersInText = 0;
 //        Implementation goes here.
 //        TIP String class has "text".toCharArray() method that transforms String to characters array.
+//        ALGORITHM: We need to convert text that is passed to this method to characters array (char[] textCharArray) in order to iterate over it
+//        On each iteration we compare the current char with the character that we are looking for (passed to method as argument)
+//        If current iteration character equals to the character we are looking for we are increasing the amountOfCharactersInText counter by one
         return amountOfCharactersInText;
     }
 

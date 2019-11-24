@@ -14,6 +14,8 @@ public class FindMaxTest {
     public static int getMaxDigit(int[] digits) {
         int maxDigit = Integer.MIN_VALUE;
 //        Implementation goes here
+//        ALGORITHM: We need to iterate over the digits array and compare the value on current iteration with the current maxDigit.
+//        If current value is bigger we assign current iteration value to maxDigit variable (maxDigit value is update with the new value)
         return maxDigit;
     }
 
