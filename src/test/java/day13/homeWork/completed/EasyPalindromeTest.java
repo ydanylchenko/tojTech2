@@ -19,7 +19,12 @@ public class EasyPalindromeTest {
         System.out.println("Now without punctuation: " + wordWithoutPunctuation);
         String wordWithoutPunctuationInLowerCase = wordWithoutPunctuation.toLowerCase();
         System.out.println("And now in lower case: " + wordWithoutPunctuationInLowerCase);
-        String reversedWordWithoutPunctuationInLowerCase = new StringBuilder(wordWithoutPunctuationInLowerCase).reverse().toString();
+//        String reversedWordWithoutPunctuationInLowerCase = new StringBuilder(wordWithoutPunctuationInLowerCase).reverse().toString();
+        String reversedWordWithoutPunctuationInLowerCase = "";
+        char[] textCharacters = wordWithoutPunctuationInLowerCase.toCharArray();
+        for (int i = textCharacters.length - 1; i >= 0; i--) {
+            reversedWordWithoutPunctuationInLowerCase += textCharacters[i];
+        }
         System.out.println(wordWithoutPunctuationInLowerCase + " is original word without punctuation and in lower case");
         System.out.println(reversedWordWithoutPunctuationInLowerCase + " is reversed word");
         isPalindrome = reversedWordWithoutPunctuationInLowerCase.equals(wordWithoutPunctuationInLowerCase);
