@@ -27,16 +27,21 @@ public class MyUntitledTest {
         driver.quit();
     }
 
-    @Ignore
     @Test
-    public void myUntitled() {
+    public void searchForSeleniumWebsiteTest() {
         assertEquals("Home page title", "Google", driver.getTitle());
         driver.findElement(By.name("q")).sendKeys("seleniumqh");
         driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
         assertEquals("Search results page title", "seleniumqh - Google Search", driver.getTitle());
         driver.findElement(By.xpath("//span[.='Showing results for']/..//i")).click();
         assertEquals("Search results page title", "seleniumqh - Google Search", driver.getTitle());
-        driver.findElement(By.xpath("//h3[.='Selenium - Web Browser Automation']")).click();
+        driver.findElement(By.xpath("//h3[.='SeleniumHQ Browser Automation']")).click();
         assertEquals("SeleniumHQ page title", "SeleniumHQ Browser Automation", driver.getTitle());
+        assertEquals("SeleniumHQ page header", "Selenium automates browsers. That's it!", driver.findElement(By.tagName("h1")).getText());
+        String expectedFullHeader = "Selenium automates browsers. That's it!\n" +
+                "What you do with that power is entirely up to you.\n" +
+                "Primarily it is for automating web applications for testing purposes, but is certainly not limited to just that.\n" +
+                "Boring web-based administration tasks can (and should) also be automated as well.";
+        assertEquals("SeleniumHQ page header", expectedFullHeader, driver.findElement(By.className("homepage")).getText());
     }
 }
