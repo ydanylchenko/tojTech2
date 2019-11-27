@@ -30,7 +30,7 @@ public class InstagramSignUpTest {
     }
 
     @Test
-    public void negativeInstagramSignUpTest() {
+    public void negativeInstagramSignUpTest() throws InterruptedException {
 //        Implementation goes here.
     }
 }
