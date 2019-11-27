@@ -31,6 +31,13 @@ public class InstagramSignUpTest {
 
     @Test
     public void negativeInstagramSignUpTest() throws InterruptedException {
-//        Implementation goes here.
+        assertEquals("Instagram", driver.findElement(By.tagName("h1")).getText());
+        driver.findElement(By.name("emailOrPhone")).sendKeys("test@example.com");
+        driver.findElement(By.name("fullName")).sendKeys("FirstName LastName");
+        driver.findElement(By.name("username")).sendKeys("someUsername");
+        driver.findElement(By.name("password")).sendKeys("P@ssw0rd");
+        driver.findElement(By.xpath("//button[.='Sign up']")).click();
+        Thread.sleep(2000);
+        assertEquals("This username isn't available. Please try another.", driver.findElement(By.id("ssfErrorAlert")).getText());
     }
 }
