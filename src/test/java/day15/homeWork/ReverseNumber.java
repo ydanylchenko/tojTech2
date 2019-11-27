@@ -6,11 +6,10 @@ import static org.junit.Assert.assertEquals;
 
 public class ReverseNumber {
     /**
-     * https://en.wikipedia.org/wiki/Parity_(mathematics)
-     * An integer is even if it is divisible by two and odd if it is not even
+     * This method reverses digit
      *
      * @param digit
-     * @return true if the digit is even or else returns false
+     * @return reversed digit
      */
     public static int getReversedDigit(int digit) {
         int reversedDigit = digit;
