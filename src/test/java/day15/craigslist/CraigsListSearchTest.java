@@ -7,8 +7,10 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
@@ -31,19 +33,83 @@ public class CraigsListSearchTest {
 
     @Test
     public void searchForSomethingTest() {
-        assertEquals("Home page title", "Google", driver.getTitle());
-        driver.findElement(By.name("q")).sendKeys("seleniumqh");
-        driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
-        assertEquals("Search results page title", "seleniumqh - Google Search", driver.getTitle());
-        driver.findElement(By.xpath("//span[.='Showing results for']/..//i")).click();
-        assertEquals("Search results page title", "seleniumqh - Google Search", driver.getTitle());
-        driver.findElement(By.xpath("//h3[.='SeleniumHQ Browser Automation']")).click();
-        assertEquals("SeleniumHQ page title", "SeleniumHQ Browser Automation", driver.getTitle());
-        assertEquals("SeleniumHQ page header", "Selenium automates browsers. That's it!", driver.findElement(By.tagName("h1")).getText());
-        String expectedFullHeader = "Selenium automates browsers. That's it!\n" +
-                "What you do with that power is entirely up to you.\n" +
-                "Primarily it is for automating web applications for testing purposes, but is certainly not limited to just that.\n" +
-                "Boring web-based administration tasks can (and should) also be automated as well.";
-        assertEquals("SeleniumHQ page header", expectedFullHeader, driver.findElement(By.className("homepage")).getText());
+    }
+
+    @Test
+    public void locatorsExamples() {
+        {
+            {
+                By logoElementLocator = By.id("logo");
+                WebElement logoElementFoundById = driver.findElement(logoElementLocator);
+                System.out.println("text in element found by id:");
+                System.out.println(logoElementFoundById.getText());
+            }
+            {
+                By logoElementLocator = By.linkText("craigslist");
+                WebElement logoElementFoundByLinkText = driver.findElement(logoElementLocator);
+                System.out.println("text in element found by linkText:");
+                System.out.println(logoElementFoundByLinkText.getText());
+            }
+            {
+                By logoElementLocator = By.partialLinkText("aigsli");
+                WebElement logoElementFoundByPartialLinkText = driver.findElement(logoElementLocator);
+                System.out.println("text in element found by partialLinkText:");
+                System.out.println(logoElementFoundByPartialLinkText.getText());
+            }
+        }
+        {
+            {
+                By calendarElementLocator = By.className("cal");
+                WebElement calendarElementsFoundByClass = driver.findElement(calendarElementLocator);
+                System.out.println("text in elements found by class:");
+                System.out.println(calendarElementsFoundByClass.getText());
+            }
+            {
+                By calendarElementLocator = By.tagName("table");
+                WebElement calendarElementsFoundByTagName = driver.findElement(calendarElementLocator);
+                System.out.println("text in elements found by tagName:");
+                System.out.println(calendarElementsFoundByTagName.getText());
+            }
+        }
+        {
+            {
+                By searchInputElementLocator = By.name("query");
+                WebElement searchInputElementFoundByName = driver.findElement(searchInputElementLocator);
+                System.out.println("placeholder attribute of element found by name:");
+                System.out.println(searchInputElementFoundByName.getAttribute("placeholder"));
+            }
+            {
+                By searchInputElementLocator = By.id("query");
+                WebElement searchInputElementFoundById = driver.findElement(searchInputElementLocator);
+                System.out.println("placeholder attribute of element found by id:");
+                System.out.println(searchInputElementFoundById.getAttribute("placeholder"));
+            }
+        }
+        {
+            System.out.println(By.id("ui-id-1"));
+            System.out.println(driver.findElements(By.id("ui-id-1")).size());
+            System.out.println(By.id("topban"));
+            System.out.println(driver.findElements(By.id("topban")).size());
+            System.out.println(By.name("lastLink"));
+            System.out.println(driver.findElements(By.name("lastLink")).size());
+            System.out.println(By.name("lastTitle"));
+            System.out.println(driver.findElements(By.name("lastTitle")).size());
+            System.out.println(By.tagName("script"));
+            System.out.println(driver.findElements(By.tagName("script")).size());
+            System.out.println(By.tagName("section"));
+            System.out.println(driver.findElements(By.tagName("section")).size());
+            System.out.println(By.className("bglogo"));
+            System.out.println(driver.findElements(By.className("bglogo")).size());
+            System.out.println(By.className("unfaves"));
+            System.out.println(driver.findElements(By.className("unfaves")).size());
+            System.out.println(By.linkText("lost+found "));
+            System.out.println(driver.findElements(By.linkText("lost+found")).size());
+            System.out.println(By.linkText("customer service"));
+            System.out.println(driver.findElements(By.linkText("customer service")).size());
+            System.out.println(By.partialLinkText("lost+fou"));
+            System.out.println(driver.findElements(By.partialLinkText("lost+fou")).size());
+            System.out.println(By.partialLinkText("customer serv"));
+            System.out.println(driver.findElements(By.partialLinkText("customer serv")).size());
+        }
     }
 }
