@@ -1,4 +1,4 @@
-package day00.loops;
+package day14.loops;
 
 import java.util.Arrays;
 
