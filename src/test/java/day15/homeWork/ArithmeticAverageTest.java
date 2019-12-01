@@ -16,6 +16,12 @@ public class ArithmeticAverageTest {
     public static double getAverage(double[] digits) {
         double average = 0;
 //        Implementation goes here.
+//        TIP_0 Average is sum of all the array elements divided by their amount
+//        In order find the sum of elements we need to define and initialize double variable that will hold the sum value
+//        and then iterate over all the elements in the array increasing the sum variable by the value of the current element
+//        amount of elements in the array is stored in the length field of the digits array
+//        and then we are assigning the result of sum by elements amount division to average variable
+
         return average;
     }
 
