@@ -5,7 +5,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.concurrent.TimeUnit;
 
@@ -29,11 +31,17 @@ public class InstagramSignUpTest {
 
     @Test
     public void negativeInstagramSignUpTest() throws InterruptedException {
+        assertEquals("https://www.instagram.com/", driver.getCurrentUrl());
+        assertEquals("Instagram", driver.findElement(By.xpath("//h1")).getText());
+        assertEquals("Instagram", driver.findElement(By.xpath("//h1[.='Instagram']")).getText());
         driver.findElement(By.name("emailOrPhone")).sendKeys("test@example.com");
-        driver.findElement(By.name("fullName")).sendKeys("someFullNme");
-        driver.findElement(By.name("username")).sendKeys("userName");
-        driver.findElement(By.name("password")).sendKeys("P@ssw0rd");
-        assertEquals("I'm on Istagram", "Instagram", driver.findElement(By.tagName("h1")).getText());
+        WebElement emailInput = driver.findElement(By.name("emailOrPhone"));
+        System.out.println("getText: " + emailInput.getText());
+        System.out.println("getAttributeValue: " + emailInput.getAttribute("value"));
+        System.out.println("getAttributeAriaLabel: " + emailInput.getAttribute("aria-label"));
 
+//        driver.findElement(By.name("fullName")).sendKeys("someFullNme");
+//        driver.findElement(By.name("username")).sendKeys("userName");
+//        driver.findElement(By.name("password")).sendKeys("P@ssw0rd");
     }
 }
