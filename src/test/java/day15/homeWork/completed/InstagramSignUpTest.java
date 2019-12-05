@@ -39,9 +39,12 @@ public class InstagramSignUpTest {
         System.out.println("getText: " + emailInput.getText());
         System.out.println("getAttributeValue: " + emailInput.getAttribute("value"));
         System.out.println("getAttributeAriaLabel: " + emailInput.getAttribute("aria-label"));
-
-//        driver.findElement(By.name("fullName")).sendKeys("someFullNme");
-//        driver.findElement(By.name("username")).sendKeys("userName");
-//        driver.findElement(By.name("password")).sendKeys("P@ssw0rd");
+        assertEquals("test@example.com", emailInput.getAttribute("value"));
+        driver.findElement(By.name("fullName")).sendKeys("someFullNme");
+        assertEquals("someFullNme", driver.findElement(By.name("fullName")).getAttribute("value"));
+        driver.findElement(By.name("username")).sendKeys("userName");
+        assertEquals("userName", driver.findElement(By.name("username")).getAttribute("value"));
+        driver.findElement(By.name("password")).sendKeys("P@ssw0rd");
+        assertEquals("P@ssw0rd", driver.findElement(By.name("password")).getAttribute("value"));
     }
 }
