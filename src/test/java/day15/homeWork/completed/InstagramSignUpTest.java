@@ -46,5 +46,10 @@ public class InstagramSignUpTest {
         assertEquals("userName", driver.findElement(By.name("username")).getAttribute("value"));
         driver.findElement(By.name("password")).sendKeys("P@ssw0rd");
         assertEquals("P@ssw0rd", driver.findElement(By.name("password")).getAttribute("value"));
+        driver.findElement(By.xpath("//button[.='Sign up']")).click();
+        assertEquals("Error message come up", "This username isn't available. Please try another.",
+                driver.findElement(By.id ("ssfErrorAlert")).getText());
+        assertEquals("Error message come up", "This username isn't available. Please try another.",
+                driver.findElement(By.xpath("//p[@id='ssfErrorAlert']")).getText());
     }
 }
