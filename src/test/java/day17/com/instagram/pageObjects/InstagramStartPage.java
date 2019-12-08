@@ -15,6 +15,7 @@ public class InstagramStartPage {
     private static final By signUpButtonLocator = By.xpath("//button[.='Sign up']");
     private static final By logInLinkLocator = By.linkText("Log in");
     private static final By errorFieldLocator = By.id ("ssfErrorAlert");
+    private static final By theAppBattons = By.xpath("//p[.=\"Get the app.\"]");
 
 
     public InstagramStartPage(WebDriver driver) {
@@ -27,6 +28,11 @@ public class InstagramStartPage {
     public InstagramStartPage setMobileNumberOrEmail(String mobileNumberOrEmail){
         driver.findElement(emailOrPhoneInputLocator).sendKeys(mobileNumberOrEmail);
         return this;
+    }
+
+    public InstagramStartPage getAppsForOsAndAndroid(String appsForOsAndAndroid){
+        driver.findElement(theAppBattons).getText();
+    return this;
     }
 
     public InstagramStartPage setFullName(String fullName){

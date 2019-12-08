@@ -15,10 +15,8 @@ public class EasyPalindromeTest {
 //        Implementation goes here. If you want to use StringBuilder please add the second implementation of this method with loops!
 //        in order to remove all the punctuation symbols we replace them with empty string
         System.out.println("Was: " + word);
-        String wordWithoutPunctuation = word.replaceAll("\\W+", "");
-        System.out.println("Now without punctuation: " + wordWithoutPunctuation);
-        String wordWithoutPunctuationInLowerCase = wordWithoutPunctuation.toLowerCase();
-        System.out.println("And now in lower case: " + wordWithoutPunctuationInLowerCase);
+        String wordWithoutPunctuationInLowerCase = word.replaceAll("\\W+", "").toLowerCase();
+        System.out.println("Now without punctuation and now in lower case: " + wordWithoutPunctuationInLowerCase);
 //        String reversedWordWithoutPunctuationInLowerCase = new StringBuilder(wordWithoutPunctuationInLowerCase).reverse().toString();
         String reversedWordWithoutPunctuationInLowerCase = "";
         char[] textCharacters = wordWithoutPunctuationInLowerCase.toCharArray();

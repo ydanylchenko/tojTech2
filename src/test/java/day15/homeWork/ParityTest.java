@@ -15,6 +15,14 @@ public class ParityTest {
     public static boolean isEven(int digit) {
         boolean isEven = false;
         System.out.println("Is " + digit + " even?");
+        if (digit%2==0){
+            isEven=true;
+            System.out.println("The number is even.");
+        }
+        else{
+            isEven=false;
+            System.out.println("The number is odd.");
+        };
 //        Implementation goes here.
 /*  TIPS_0: The method is supposed to check if provided as argument digit is even or odd.
 There's no point in checking of both "if digit divides by two without leftover and if digit divides by two with leftover" conditions
