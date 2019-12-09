@@ -58,4 +58,121 @@ public class InstagramSignUpTests {
         assertEquals("Full Name", fullName, profilePage.getFullName());
         assertEquals("Title", String.format("%s (@%s) • Instagram photos and videos", fullName, userName), profilePage.getTitle());
     }
+
+    @Test
+    public void signUpWithNoEmail() {
+        InstagramStartPage startPage = new InstagramStartPage(driver);
+        startPage.setMobileNumberOrEmail("");
+        String userName = getUniqueUserName();
+        startPage.setUsername(userName);
+        String fullName = "someFirstName someLastName";
+        startPage.setFullName(fullName).setPassword("P@ssw0rd");
+        InstagramNotificationsForm instagramNotificationsForm = startPage.clickSignUpButton();
+        InstagramSuggestionsForYouPage suggestionsForYouPage = instagramNotificationsForm.clickNotNowButton();
+        InstagramProfilePage profilePage = suggestionsForYouPage.clickProfileButton();
+        assertEquals("UserName", userName, profilePage.getUserName());
+        assertEquals("Full Name", fullName, profilePage.getFullName());
+        assertEquals("Title", String.format("%s (@%s) • Instagram photos and videos", fullName, userName), profilePage.getTitle());
+    }
+
+    @Test
+    public void signUpWithNoFullNameInput() {
+        InstagramStartPage startPage = new InstagramStartPage(driver);
+        startPage.setMobileNumberOrEmail(Helpers.getUniqueEmail());
+        String userName = getUniqueUserName();
+        startPage.setUsername(userName);
+        String fullName = "";
+        startPage.setFullName(fullName).setPassword("P@ssw0rd");
+        InstagramNotificationsForm instagramNotificationsForm = startPage.clickSignUpButton();
+        InstagramSuggestionsForYouPage suggestionsForYouPage = instagramNotificationsForm.clickNotNowButton();
+        InstagramProfilePage profilePage = suggestionsForYouPage.clickProfileButton();
+        assertEquals("UserName", userName, profilePage.getUserName());
+        assertEquals("Full Name", fullName, profilePage.getFullName());
+        assertEquals("Title", String.format("%s (@%s) • Instagram photos and videos", fullName, userName), profilePage.getTitle());
+    }
+
+    @Test
+    public void signUpWithNoPasswordInput() {
+        InstagramStartPage startPage = new InstagramStartPage(driver);
+        startPage.setMobileNumberOrEmail(Helpers.getUniqueEmail());
+        String userName = getUniqueUserName();
+        startPage.setUsername(userName);
+        String fullName = "someFirstName someLastName";
+        startPage.setFullName(fullName).setPassword("");
+        InstagramNotificationsForm instagramNotificationsForm = startPage.clickSignUpButton();
+        InstagramSuggestionsForYouPage suggestionsForYouPage = instagramNotificationsForm.clickNotNowButton();
+        InstagramProfilePage profilePage = suggestionsForYouPage.clickProfileButton();
+        assertEquals("UserName", userName, profilePage.getUserName());
+        assertEquals("Full Name", fullName, profilePage.getFullName());
+        assertEquals("Title", String.format("%s (@%s) • Instagram photos and videos", fullName, userName), profilePage.getTitle());
+        assertEquals("Create a password at least 6 characters long.", startPage.getErrorMessage());
+    }
+
+    @Test
+    public void signUpWithWrongEmail() {
+        InstagramStartPage startPage = new InstagramStartPage(driver);
+        startPage.setMobileNumberOrEmail("зачембля@yahoocom");
+        String userName = getUniqueUserName();
+        startPage.setUsername(userName);
+        String fullName = "someFirstName someLastName";
+        startPage.setFullName(fullName).setPassword("P@ssw0rd");
+        InstagramNotificationsForm instagramNotificationsForm = startPage.clickSignUpButton();
+        InstagramSuggestionsForYouPage suggestionsForYouPage = instagramNotificationsForm.clickNotNowButton();
+        InstagramProfilePage profilePage = suggestionsForYouPage.clickProfileButton();
+        assertEquals("UserName", userName, profilePage.getUserName());
+        assertEquals("Full Name", fullName, profilePage.getFullName());
+        assertEquals("Title", String.format("%s (@%s) • Instagram photos and videos", fullName, userName), profilePage.getTitle());
+        assertEquals("Enter a valid email address.", startPage.getErrorMessage());
+    }
+
+    @Test
+    public void signUpWithTooShortPassword() {
+        InstagramStartPage startPage = new InstagramStartPage(driver);
+        startPage.setMobileNumberOrEmail(Helpers.getUniqueEmail());
+        String userName = getUniqueUserName();
+        startPage.setUsername(userName);
+        String fullName = "someFirstName someLastName";
+        startPage.setFullName(fullName).setPassword("ghqw7");
+        InstagramNotificationsForm instagramNotificationsForm = startPage.clickSignUpButton();
+        InstagramSuggestionsForYouPage suggestionsForYouPage = instagramNotificationsForm.clickNotNowButton();
+        InstagramProfilePage profilePage = suggestionsForYouPage.clickProfileButton();
+        assertEquals("UserName", userName, profilePage.getUserName());
+        assertEquals("Full Name", fullName, profilePage.getFullName());
+        assertEquals("Title", String.format("%s (@%s) • Instagram photos and videos", fullName, userName), profilePage.getTitle());
+        assertEquals("Create a password at least 6 characters long.", startPage.getErrorMessage());
+    }
+
+    @Test
+    public void signUpWithSpecialCharactersPasswordOnly() {
+        InstagramStartPage startPage = new InstagramStartPage(driver);
+        startPage.setMobileNumberOrEmail(Helpers.getUniqueEmail());
+        String userName = getUniqueUserName();
+        startPage.setUsername(userName);
+        String fullName = "someFirstName someLastName";
+        startPage.setFullName(fullName).setPassword("@!$#$%$^&%&^*&^*(&(*&(**&^&%#@)((&%^&");
+        InstagramNotificationsForm instagramNotificationsForm = startPage.clickSignUpButton();
+        InstagramSuggestionsForYouPage suggestionsForYouPage = instagramNotificationsForm.clickNotNowButton();
+        InstagramProfilePage profilePage = suggestionsForYouPage.clickProfileButton();
+        assertEquals("UserName", userName, profilePage.getUserName());
+        assertEquals("Full Name", fullName, profilePage.getFullName());
+        assertEquals("Title", String.format("%s (@%s) • Instagram photos and videos", fullName, userName), profilePage.getTitle());
+        assertEquals("Create a password at least 6 characters long.", startPage.getErrorMessage());
+        assertEquals("Sorry, something went wrong creating your account. Please try again soon.", startPage.getErrorMessage());
+
+    }
+    @Test
+    public void signUpWithUserNameContainingSpecialSymbol() {
+        InstagramStartPage startPage = new InstagramStartPage(driver);
+        startPage.setMobileNumberOrEmail(Helpers.getUniqueEmail());
+        String userName = getUniqueUserName();
+        startPage.setUsername(userName);
+        String fullName = "someFirstName@";
+        startPage.setFullName(fullName).setPassword("P@ssw0rd");
+        InstagramNotificationsForm instagramNotificationsForm = startPage.clickSignUpButton();
+        InstagramSuggestionsForYouPage suggestionsForYouPage = instagramNotificationsForm.clickNotNowButton();
+        InstagramProfilePage profilePage = suggestionsForYouPage.clickProfileButton();
+        assertEquals("UserName", userName, profilePage.getUserName());
+        assertEquals("Full Name", fullName, profilePage.getFullName());
+        assertEquals("Title", String.format("%s (@%s) • Instagram photos and videos", fullName, userName), profilePage.getTitle());
+    }
 }
