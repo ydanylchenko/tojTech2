@@ -58,7 +58,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
                 assertEquals("https://www.instagram.com/", driver.getCurrentUrl());
                 assertEquals("This username isn't available. Please try another.", startPage.getErrorMessage());
-               // assertEquals("Get the app.", startPage.getAppsForOsAndAndroid());
+                assertEquals("Get the app.", startPage.getAppsForOsAndAndroid(""));
+
             }
         }
 
