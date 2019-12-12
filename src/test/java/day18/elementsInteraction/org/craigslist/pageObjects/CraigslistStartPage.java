@@ -29,25 +29,30 @@ public class CraigslistStartPage {
         return new CraigslistSearchResultsPage(driver);
     }
 
-    public String getSelectedLanguage() {
-        WebElement select = driver.findElement(languageSelectLocator);
-//        Find select element and get text out of it:
-        String textInSelect = select.getText();
+//    public String getSelectedLanguage() {
+//        WebElement select = driver.findElement(languageSelectLocator);
+////        Find select element and get text out of it:
+//        String textInSelect = select.getText();
 //        System.out.println("Text in select element: " + textInSelect);
-//        Using option based locator:
-        By selectedOptionLocator = By.xpath("//select[@id=\"chlang\"]/option[@selected]");
-        String selectedOptionText = driver.findElement(selectedOptionLocator).getText();
-        System.out.println("Using option element locator: " + selectedOptionText);
-//        Using Select class:
-        Select selectLanguage = new Select(select);
-//        print all available options
-        System.out.println("Available options: ");
-        for (WebElement option : selectLanguage.getOptions()) {
+////        Using option based locator:
+//        By selectedOptionLocator = By.xpath("//select[@id=\"chlang\"]/option[@selected]");
+//        String selectedOptionText = driver.findElement(selectedOptionLocator).getText();
+//        System.out.println("Using option element locator: " + selectedOptionText);
+////        Using Select class:
+//        Select selectLanguage = new Select(select);
+////        print all available options
+//        System.out.println("Available options: ");
+//        for (WebElement option : selectLanguage.getOptions()) {
 //            System.out.println(option.getText());
-        }
-        String firstSelectedOption = selectLanguage.getFirstSelectedOption().getText();
-        System.out.println("First selected option from select object: " + firstSelectedOption);
-        return firstSelectedOption;
+//        }
+//        String firstSelectedOption = selectLanguage.getFirstSelectedOption().getText();
+//        System.out.println("First selected option from select object: " + firstSelectedOption);
+//        return firstSelectedOption;
+//    }
+
+    public String getSelectedLanguage() {
+        Select selectLanguage = new Select(driver.findElement(languageSelectLocator));
+        return selectLanguage.getFirstSelectedOption().getText();
     }
 
     public CraigslistStartPage selectLanguageByVisibleText(String language) {
