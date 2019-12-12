@@ -30,9 +30,9 @@ public class InstagramStartPage {
         return this;
     }
 
-    public String getAppsForOsAndAndroid(String appsForOsAndAndroid){
-        //driver.findElement(theAppBattons).getText();
-    return driver.findElement(theAppBattons).getText();
+    public String getAppsForOsAndAndroid(){
+        String xFight = driver.findElement(theAppBattons).getText();
+    return xFight;
     }
 
     public InstagramStartPage setFullName(String fullName){
