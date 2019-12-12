@@ -1,9 +1,7 @@
 package day18.elementsInteraction.org.craigslist;
 
-import day18.elementsInteraction.org.craigslist.pageObjects.CraigslistSearchResultsPage;
 import day18.elementsInteraction.org.craigslist.pageObjects.CraigslistStartPage;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;

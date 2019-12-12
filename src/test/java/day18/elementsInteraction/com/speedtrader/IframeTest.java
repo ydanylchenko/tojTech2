@@ -1,4 +1,4 @@
-package day18.elementsInteraction.org.craigslist;
+package day18.elementsInteraction.com.speedtrader;
 
 import org.junit.After;
 import org.junit.Assert;
