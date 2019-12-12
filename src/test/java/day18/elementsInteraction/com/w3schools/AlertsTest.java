@@ -48,6 +48,6 @@ public class AlertsTest {
         Alert displayedAlert = driver.switchTo().alert();
         System.out.println(displayedAlert.getText());
         assertEquals("Press a button!", displayedAlert.getText());
-        displayedAlert.accept();
+        displayedAlert.dismiss();
     }
 }
