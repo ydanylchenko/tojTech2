@@ -3,12 +3,16 @@ package day18.elementsInteraction.org.craigslist;
 import day18.elementsInteraction.org.craigslist.pageObjects.CraigslistSearchResultsPage;
 import day18.elementsInteraction.org.craigslist.pageObjects.CraigslistStartPage;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class CraigslistCheckboxTest {
     WebDriver driver;
@@ -28,9 +32,17 @@ public class CraigslistCheckboxTest {
 
     @Test
     public void openSearchPage() {
-        CraigslistSearchResultsPage searchResultsPage = new CraigslistStartPage(driver).setSearchCriteria("toaster").submit();
+        CraigslistSearchResultsPage searchResultsPage = new CraigslistStartPage(driver)
+                .setSearchCriteria("toaster").submit();
         searchResultsPage.clickSearchTitlesOnly();
-        searchResultsPage.markSearchTitlesOnly(false);
         searchResultsPage.markSearchTitlesOnly(true);
+        searchResultsPage.markSearchTitlesOnly(false);
+    }
+
+    @Test
+    public void searchResultsCategoryTest() {
+        CraigslistSearchResultsPage searchResultsPage = new CraigslistStartPage(driver).setSearchCriteria("toaster").submit();
+        assertTrue(searchResultsPage.isCategoryInMainCategories("business"));
+        assertFalse(searchResultsPage.isCategoryInMainCategories("klasdjflksdjfsdfkj"));
     }
 }

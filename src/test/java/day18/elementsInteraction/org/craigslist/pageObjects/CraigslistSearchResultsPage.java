@@ -40,6 +40,14 @@ public class CraigslistSearchResultsPage {
         return new CraigslistSearchResultsPage((driver));
     }
 
+    public boolean isCategoryInMainCategories(String category) {
+//        By categoryLocator = By.xpath("//ul[@class=\"maincats\"]/li/a[.='business']");
+//        By categoryLocator = By.xpath("//ul[@class=\"maincats\"]/li/a[.='" + category + "']");
+        By categoryLocator = By.xpath(String.format("//ul[@class=\"maincats\"]/li/a[.='%s']", category));
+        int amountOfElements = driver.findElements(categoryLocator).size();
+        return amountOfElements > 0;
+    }
+
     public CraigslistSearchResultsPage markSearchTitlesOnly(boolean checked) {
         By checkboxContains = By.xpath("//label[text()[contains(.,'search titles only')]]/input");
         WebElement checkbox = driver.findElement(checkboxContains);
