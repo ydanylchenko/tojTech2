@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -18,6 +19,7 @@ public class IframeSeleniumGridExtendedTest {
 
     @Before
     public void setUp() throws MalformedURLException {
+//        DesiredCapabilities capabilitiesShort = DesiredCapabilities.chrome();
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setBrowserName("chrome");
         capabilities.setVersion("78.0");
