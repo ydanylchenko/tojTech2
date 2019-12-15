@@ -1,22 +1,25 @@
-package day18.elementsInteraction.com.speedtrader;
+package extra;
 
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class IframeTest {
+public class IframeSeleniumGridTest {
     private WebDriver driver;
 
     @Before
-    public void setUp() {
-        driver = new ChromeDriver();
+    public void setUp() throws MalformedURLException {
+        DesiredCapabilities capability = DesiredCapabilities.firefox();
+        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         driver.get("https://www.speedtrader.com/");
