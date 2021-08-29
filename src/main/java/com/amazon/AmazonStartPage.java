@@ -12,7 +12,8 @@ public class AmazonStartPage {
 
     public AmazonStartPage(WebDriver webDriver) {
         driver = webDriver;
-        new WebDriverWait(driver, 5).until(ExpectedConditions.titleIs("Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more"));
+        new WebDriverWait(driver, 5).until(ExpectedConditions.titleIs
+                ("Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more"));
     }
 
     public AmazonPrimePage clickTryPrimeNavBarLink() {

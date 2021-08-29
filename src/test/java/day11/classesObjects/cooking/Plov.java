@@ -13,7 +13,7 @@ import java.util.Date;
 // class is keyword for class
 //Plov is the name of the class. It's used for references between other classes
 public class Plov {
-    //    class fields: they describe charcteristics And state of the object created for this class
+    //    class fields: they describe characteristics And state of the object created for this class
     public boolean isFresh;
     public double weight;
     public int amountOfPortions;

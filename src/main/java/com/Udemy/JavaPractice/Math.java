@@ -1,3 +1,5 @@
+package com.Udemy.JavaPractice;
+
 public class Math {
     public int sum(int a, int b) {
         int result = a + b;
